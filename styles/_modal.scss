@@ -1,0 +1,75 @@
+.modal{
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.401);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.hidde{
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.show{
+    opacity: 1;
+    pointer-events: unset;
+  }
+}
+
+.modal_container{
+  background-color: white;
+  width: 25%;
+  height: 50%;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .modal_header{
+    border-bottom: 2px solid gainsboro;
+    padding: 1rem;
+    color: cornflowerblue;
+    font-size: larger;
+  }
+
+  .modal_body{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input{
+      border: 1px solid gray;
+      padding: .25rem;
+      border-radius: .5rem;
+      width: 80%;
+      font-size: medium;
+      :focus{
+        border-color: cornflowerblue;
+      }
+    }
+  }
+
+  .modal_footer{
+    border-top: 2px solid gainsboro;
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+
+    button{
+      background-color: cornflowerblue;
+      color: white;
+
+    }
+  }
+
+  @media (max-width: 820px) {
+    width: 50%;
+  }
+
+  @media (max-width: 425px) {
+    width: 80%;
+  }
+}

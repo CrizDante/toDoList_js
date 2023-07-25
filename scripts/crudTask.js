@@ -4,6 +4,7 @@ const addTask = document.querySelector('.s_fr_input button');
 const deleteAll = document.getElementById('clear_all')
 const secondFrInput = document.querySelector(".s_fr_input");
 
+
 // estado
 const state = {
   tasks: []

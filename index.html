@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script type="module" src="./scripts/crudTask.js"></script>
+    <script type="module" src="./scripts/modal.js"></script>
   </head>
   <body>
-    <div class="cc">
-      <small>Un proyecto de Cris Dante</small>
-    </div>
-
     <main>
+      <div class="cc">
+        <small>Un proyecto de Cris Dante</small>
+      </div>
       <div class="main_fr">
-        <h2>Hola 'Usuario'</h2>
+        <h2>Hola</h2>
         <div class="second_fr">
           <h4>To Do List</h4>
           <div class="s_fr_input">
@@ -29,5 +29,19 @@
         </div>
       </div>
     </main>
+
+    <section class="modal">
+      <div class="modal_container">
+        <div class="modal_header">
+          Bienvenid@ a tu lista de tareas
+        </div>
+        <div class="modal_body">
+          <input type="text" placeholder="Como te llamas?">
+        </div>
+        <div class="modal_footer">
+          <button>Vamos 😄</button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
