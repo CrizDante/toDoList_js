@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script type="module" src="./scripts/crudTask.js"></script>
+  </head>
+  <body>
+    <div class="cc">
+      <small>Un proyecto de Cris Dante</small>
+    </div>
+
+    <main>
+      <div class="main_fr">
+        <h2>Hola 'Usuario'</h2>
+        <div class="second_fr">
+          <h4>To Do List</h4>
+          <div class="s_fr_input">
+           <div class="ch_input_btn">
+             <input type="text" />
+             <button onclick="addTask()">guardar 💾</button>
+           </div>
+          </div>
+          <ul>
+            <p>Escribe lo que necesites recordar por hacer</p> <span task-id="${element.id}" class='x_btn'>✖</span>
+          </ul>
+          <button id="clear_all" onclick="deleteAll()">Limpiar Tareas</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

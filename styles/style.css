@@ -1,0 +1,125 @@
+.cc {
+  margin-bottom: 0.5em;
+  color: gainsboro;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+main > .main_fr {
+  min-width: 19em;
+  background-color: lightcyan;
+  max-width: 50em;
+  padding: 1.2em;
+  border-radius: 0.8em;
+}
+main > .main_fr h2 {
+  text-align: start;
+  color: dimgrey;
+  margin-bottom: 0.5em;
+}
+
+.second_fr {
+  background-color: white;
+  border-radius: 0.8em;
+  padding: 1rem;
+  box-shadow: inset 2px 2px 10px rgba(105, 105, 105, 0.401);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+.second_fr ul {
+  list-style: none;
+  min-width: 90%;
+  padding: 0.5em;
+  background-color: lightyellow;
+  box-shadow: 2px 2px 10px rgba(105, 105, 105, 0.401);
+}
+.second_fr ul > li {
+  max-width: 25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5em;
+  border-bottom: 1px solid cornflowerblue;
+  border-left: 1px solid red;
+  white-space: 20em;
+  text-orientation: sideways;
+  text-align: left;
+}
+
+.s_fr_input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.s_fr_input .ch_input_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.s_fr_input input {
+  border-radius: 1em 0 0 1em;
+  padding: 0.5em;
+  box-shadow: 1px 2px 5px rgba(105, 105, 105, 0.401);
+  border-width: 0.1%;
+  border-color: gainsboro;
+  border-style: solid;
+}
+
+.error_discl {
+  border: solid firebrick;
+  border-width: 1px;
+  background-color: rosybrown;
+  color: firebrick;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  font-size: small;
+}
+
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+  margin: 0 !important;
+  background-color: dimgray;
+}
+:root button {
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.5rem;
+  text-transform: capitalize;
+  box-shadow: 1px 2px 5px rgba(105, 105, 105, 0.401);
+  max-width: max-content;
+}
+:root h1, :root h2, :root h3, :root h4, :root h5, :root h6, :root p, :root span, :root small, :root strong, :root link {
+  margin: 0;
+}
+
+.x_btn {
+  border-radius: 50%;
+  padding: 0;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  background-color: cornflowerblue;
+  color: aliceblue;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s_fr_input button {
+  border-radius: 0 1em 1em 0;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
