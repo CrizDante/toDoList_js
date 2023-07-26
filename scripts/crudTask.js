@@ -15,8 +15,10 @@ eventListener()
 
 // función que inicializa las variables
 function eventListener() {
+  const tasks = localStorage.getItem('tasks')
+
   document.addEventListener('DOMContentLoaded', () => {
-    state.tasks = [...JSON.parse(localStorage.getItem('tasks'))]
+    state.tasks = tasks ? [...JSON.parse(tasks)] : []
     createTask()
   })
 
@@ -24,27 +26,27 @@ function eventListener() {
 }
 
 // función para guradar una tarea con un botón
-addTask.onclick = function (event) {
-  event.preventDefault();
-  const task = input.value;
-  if (task === '') {
-    showError('debes escribir algo para poder guardar...')
-    return
-  }
+// addTask.onclick = function (event) {
+//   event.preventDefault();
+//   const task = input.value;
+//   if (task === '') {
+//     showError('debes escribir algo para poder guardar...')
+//     return
+//   }
 
-  const taskObj = {
-    name: task,
-    id: Date.now()
-  }
+//   const taskObj = {
+//     name: task,
+//     id: Date.now()
+//   }
 
-  state.tasks.push(taskObj);
-  input.value = '';
+//   state.tasks.push(taskObj);
+//   input.value = '';
 
-  console.log(state.tasks);
+//   console.log(state.tasks);
 
-  createTask()
+//   createTask()
 
-};
+// };
 
 // funsion al presionar enter en el input para guardar una tarea
 input.addEventListener('keydown', function (event) {
@@ -75,12 +77,16 @@ function createTask() {
 
   clearHtml()
 
-  if (state.tasks.length > 0) {
+  if (state.tasks && state.tasks.length > 0) {
     state.tasks.map(element => {
       const li = document.createElement('li')
-      li.innerHTML = `<p>${element.name}</p> <span task-id="${element.id}" class='x_btn'>✖</span>`
+      li.innerHTML = `<p>${element.name}</p> <span task-id="${element.id}" class='x_btn'>✔</span>`
       listTask.appendChild(li)
     });
+  } else if (state.tasks.length <= 0 || !state.tasks) {
+    const li = document.createElement('li')
+    li.innerHTML = `<p>Escribe lo que necesites recordar o Hacer</p>`
+    listTask.appendChild(li)
   }
   syncroStorage()
 }
@@ -112,12 +118,6 @@ function syncroStorage() {
 
 // limpiar el html
 function clearHtml() {
-
-  if(state.tasks.length === 0){
-    listTask.innerHTML = `<li><p>Escribe lo que necesites recordar por hacer</p></li>`
-    return
-  }
-
   listTask.innerHTML = ''
 }
 
