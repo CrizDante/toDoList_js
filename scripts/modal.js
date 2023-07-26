@@ -11,7 +11,7 @@ verifyName()
 
 function verifyName (){
 
-  Name = localStorage.getItem('nombre')
+  Name = localStorage.getItem('nombre') && localStorage.getItem('nombre')
 
   if(Name === null || Name === 'usuario'){
     openModal()
