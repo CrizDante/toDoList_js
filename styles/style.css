@@ -201,6 +201,13 @@ main > .main_fr h2 {
   background-color: cornflowerblue;
   color: white;
 }
+.modal_container .modal_footer button:disabled {
+  background-color: lightslategray;
+}
+.modal_container .name_discl {
+  font-size: 0.7rem;
+  margin-top: 1rem;
+}
 @media (max-width: 820px) {
   .modal_container {
     width: 50%;

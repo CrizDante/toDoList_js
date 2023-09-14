@@ -3,32 +3,40 @@ const input = document.querySelector(".modal_body input");
 const modalBody = document.querySelector(".modal_body");
 const titulo = document.querySelector('.main_fr h2')
 const btn_exit = document.querySelector('.modal_footer button')
-
+const YourName = document.createElement('p')
 
 let Name = 'usuario'
-
+let ConfirmName = ''
 verifyName()
 
-function verifyName (){
+function verifyName() {
 
-  Name = localStorage.getItem('nombre') && localStorage.getItem('nombre')
+  Name = localStorage.getItem('nombre')
 
-  if(Name === null || Name === 'usuario'){
+  console.log(Name);
+
+  if (Name === null || Name === 'usuario') {
     openModal()
+    btn_exit.disabled = true
+    YourName.textContent = `Recuerda pulsar [Intro↵] para guardar tu nombre `
+    YourName.classList.add('name_discl')
+    modalBody.appendChild(YourName)
+    return
+  } else {
+    createHtml()
+    hiddeModal()
     return
   }
-  createHtml()
-  hiddeModal()
+
 }
 
-function openModal (){
-  localStorage.setItem('nombre', 'usuario' )
+function openModal() {
+  localStorage.setItem('nombre', 'usuario')
   modal.classList.add('show')
   createHtml()
-  console.log('modal abierto');
 }
 
-function hiddeModal(){
+function hiddeModal() {
   modal.classList.add('hidde')
   modal.classList.remove('show')
 }
@@ -42,13 +50,17 @@ input.addEventListener('keydown', function (event) {
       return
     }
     Name = nombre
+    ConfirmName = nombre
     showName()
     createHtml()
   }
 })
 
-btn_exit.onclick = function(event){
+btn_exit.onclick = function (event) {
   event.preventDefault()
+  if(ConfirmName !== null || ConfirmName !== ''){
+    Name = ConfirmName
+  }
   createHtml()
   hiddeModal()
 }
@@ -67,14 +79,14 @@ function clearHtml() {
 }
 
 function syncroStorage() {
-  localStorage.setItem('nombre', Name )
+  localStorage.setItem('nombre', Name)
 }
 
 function showName() {
-  const YourName = document.createElement('p')
+  
   YourName.textContent = `Trabajar contigo seria genial ${Name}`
   YourName.classList.add('name_discl')
-
+  btn_exit.disabled = false;
   modalBody.appendChild(YourName)
 }
 
