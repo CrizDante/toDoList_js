@@ -126,12 +126,19 @@ main > .main_fr h2 {
   padding: 0;
   min-width: 1.5rem;
   min-height: 1.5rem;
-  background-color: cornflowerblue;
-  color: aliceblue;
+  background-color: transparent;
+  color: transparent;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0.05rem solid cornflowerblue;
+}
+
+.x_btn:hover {
+  background-color: cornflowerblue;
+  color: aliceblue;
+  border: none;
 }
 
 .s_fr_input button {
